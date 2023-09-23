@@ -21,5 +21,68 @@ int main()
         }
     }
 }
-
+/*Quiz1 code*/
 /*개인적으로 example input으로 컴파일 돌렸을 때는 원하는 출력값이 나왔는데, 백준에 제출하니 틀렸다고 나왔어욥.. 뭐가 문제일까요?*/
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	int a = 0, score=0, sum=0;
+	char str[80];
+
+	printf("Type the results number and results: \n");
+	scanf("%d", &a);
+
+
+	for (int i = 1; i <= a; i++) {
+		printf("Type the result%d: \n", i);
+		scanf("%s", str);
+		for (int j = 1; j < 10; j++) {
+			if (str[0] == '0') {
+				score = score + 1;
+				sum = sum + score;
+			}
+			if (str[j] == 'O') {
+				score = score + 1;
+			}
+			else {
+				sum = sum + score;
+				score = 0;
+			}
+			printf("%d\n", sum);
+		}
+		printf("%d\n", sum);
+	}
+}
+/*Quiz2 code*/
+/*문제도 이해했고, 접근방법도 이해했다고 생각하는데 원하는 결과값이 나오지 않았습니다.. 포인터 개념을 써야할 것 같은데 string 자체가 주소니까 또 안써도 되지 않을까? 이런 생각도 들고,,, 여러모로 다시 봐야할 것 같은 문제입니다*/
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+    int M, N;
+
+    printf("Type first number: \n");
+    scanf("%d", &M);
+    printf("Type second number: \n");
+    scanf("%d", &N);
+
+}
+/*Quiz3 code*/
+/*공유해도 될 정도의 상태가 아닌 코드같지만,, ㅋㅋ 시도의 흔적이라도 남겨봅니다,, 제곱수 다루는법 1학기 때 했었던 것 같은데 기억나질 않네요.. ㅠㅅㅠ*/
+
+
+
+
+
+
+
+
+
+
+
+
