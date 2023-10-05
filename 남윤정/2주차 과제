@@ -1,0 +1,42 @@
+#include <iostream>
+#include <math.h>
+#define _CRT_SECURE_NO_WARNINGS
+int main()
+{
+	int M = 0, N = 0;
+
+	int temp = 0;
+	int count = 0;
+	int i = 0, j = 0;
+	int sum = 0;
+	int minPerfectSquare = -1;
+
+	scanf_s("%d\n%d", &M, &N);
+
+	for (i = M; i <= N; i++) {
+		for (j = 1; j <= 100; j++) {
+			if (i % j == 0) {
+				temp = i / j;
+				if (i == pow(temp, 2)) {
+					sum += i;
+					if (count < 1 || i < minPerfectSquare) {
+						minPerfectSquare = i;
+						count = 1;
+					}
+				}
+			}
+		}
+	}
+
+	if (sum == 0) {
+		sum = -1;
+	}
+	printf("%d\n", sum);
+	
+
+	if (sum != -1) {
+		printf("%d", minPerfectSquare);
+	}
+
+	return 0;
+}
