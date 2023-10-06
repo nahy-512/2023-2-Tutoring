@@ -1,0 +1,35 @@
+Code for week2 hw, [1977 Baekjoon]
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+int M, N;
+int little = 0;
+int sum = 0;
+scanf("%d", &M);
+scanf("%d", &N);
+
+for (int i = M; i <= N; i++) {
+	int num = 0;
+	for (int j = 1; j <= i; j++) {
+		if (i % j == 0) {
+			num++;
+			/*최소값을 어떻게 완전제곱수 총합보다 뒤에 출력할까 -> 라고 고민했는데 해결 완료!*/
+		}
+	}
+	if (num % 2 == 1) {
+		sum = sum + i;
+		if (little == 0) {
+			little = little + i;
+		}
+	}
+}
+if (sum != 0) {
+	printf("%d\\n", sum);
+	printf("%d", little);
+}
+else {
+	printf("-1");
+}
+}
