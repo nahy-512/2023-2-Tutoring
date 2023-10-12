@@ -1,0 +1,34 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+struct EMPRECORD{
+	int weight;
+	int height;
+	int score;
+};
+
+int main() {
+	int N; /*총 비교군의 수(사람 수)*/
+	struct EMPRECORD build[51]; /*array 선언*/
+	scanf("%d", &N);
+	for (int i = 0; i < N; i++) {
+		scanf("%d %d", &build[i].weight, &build[i].height);
+	}
+	for (int i = 0; i < N; i++) {
+		build[i].score = 1;
+	}
+
+	/*input 값들 인식완료*/
+	for (int j = 0; j < N; j++) {
+		for (int k = 0; k < N; k++) {
+			if (j != k) {
+				if (build[j].weight > build[k].weight && build[j].height > build[k].height) {
+					build[k].score++;
+				}
+			}
+		}
+	}
+	for (int l = 0; l < N; l++) {
+		printf("%d ", build[l].score);
+	}
+}
