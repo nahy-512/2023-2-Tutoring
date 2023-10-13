@@ -35,6 +35,8 @@ void sorting(struct FRUIT* fru) {
       if((fru[i].price*fru[i].number)<(fru[j].price*fru[j].number)) {
           swap(fru[i], fru[j]);
 }
+}
+}
 
 void print(struct FRUIT* fru) {
 	printf("\nPrinting the result\n");
