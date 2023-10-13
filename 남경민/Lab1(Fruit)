@@ -29,23 +29,6 @@ void print(struct FRUIT* fru) {
 	}
 }
 
-/*Add for Lab2*/
-void print_expensive_item(struct FRUIT* fru) {
-	printf("\nPrinting the most expensive item in total\n");
-	struct FRUIT tmp;
-	for (int i = 0; i < NUM; i++) {
-		/* code here for printing */
-		tmp.totalp = fru[0].totalp;
-		if (tmp.totalp < fru[i].totalp) {
-			tmp.name[10] = fru[0].name[10];
-			tmp.price = fru[0].price;
-			tmp.totalp = fru[0].totalp;
-		}
-		printf("%s Price= %d Number= %d Total=%d", tmp.name, tmp.price, tmp.number, tmp.totalp);
-	}
-}
-/*Add for Lab2*/
-
 int main() {
 	struct FRUIT fru[NUM];
 	init(fru);
