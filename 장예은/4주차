@@ -1,0 +1,43 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int* sorting(struct SIZE[], int);
+int result[50] = { 0, };
+struct SIZE
+{
+	int x;
+	int y;
+};
+
+int main()
+{
+	struct SIZE enter[50];
+	int count;
+	int* result;
+	scanf("%d", &count);
+	for (int i = 0; i < count; i++)
+	{
+		scanf("%d %d", &enter[i].x, &enter[i].y);
+	}
+	result = sorting(enter, count);
+	for (int k = 0; k < count; k++)
+	{
+		printf("%d ", *(result + k)+1);
+	}
+	return 0;
+}
+
+int* sorting(struct SIZE enter_s[], int c)
+{
+	
+
+	for (int i = 0; i < c; i++)
+	{
+		for (int j = 0; j < c; j++)
+		{
+			if ((enter_s[i].x < enter_s[j].x) && (enter_s[i].y < enter_s[j].y))
+				result[i]++;
+		}
+	}
+	return result;
+}
