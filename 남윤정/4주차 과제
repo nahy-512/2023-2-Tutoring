@@ -1,0 +1,127 @@
+1))
+
+#include <stdio.h>
+
+// Node 구조체를 정의
+struct Node {
+    int key;    
+    int *next;  
+};
+
+int main() {
+    // 5개의 Node 구조체 배열 정의
+    struct Node nodes[5];
+    
+    // 각 노드  key로 초기화, next를 0 설정
+    for (int i = 0; i < 5; i++) {
+        nodes[i].key = i;
+        nodes[i].next = 0;
+    }
+    
+    // 링크하기 전에 정보 출력
+    printf("Before linking\n");
+    for (int i = 0; i < 5; i++) {
+        printf("i=%d key=%d next=%d Add=%p\n", i, nodes[i].key, nodes[i].next, &nodes[i]);
+    }
+    
+    // 노드 연결
+    for (int i = 0; i < 4; i++) {
+        nodes[i].next = &nodes[i + 1];
+    }
+    
+    // 링크한 후 정보 출력
+    printf("After linking\n");
+    for (int i = 0; i < 5; i++) {
+        printf("i=%d key=%d next=%d Add=%p\n", i, nodes[i].key, nodes[i].next->key, &nodes[i]);
+    }
+    
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+2))
+
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    char name[50];
+    float height;
+    float weight;
+    int schols;
+};
+
+//함수 정의
+void modifyStudent(struct Student *student) {
+    if (student->height < 180)
+        student->height = 180; //키가 180미만이면 180으로 설정
+    if (student->weight < 100)
+        student->weight = 100; //몸무게가 100미만이면 100으로 설정
+}
+
+int main() {
+    struct Student students[2]; //배열 선언
+    
+    // 학생 정보 입력받기
+    for (int i = 0; i < 2; i++) {
+        printf("Type %d-th student's info (Name, height, weight, schols): ", i);
+        scanf_s("%s %f %f %d", students[i].name, &students[i].height, &students[i].weight, &students[i].schols);
+    }
+    
+    // 학생 정보 수정
+    for (int i = 0; i < 2; i++) {
+        modifyStudent(&students[i]);
+        printf("Name = %s\n", students[i].name);
+        printf("Height = %.6f\n", students[i].height);
+        printf("Weight = %.6f\n", students[i].weight);
+        printf("Schols = %d\n", students[i].schols);
+    }
+    
+    return 0;
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+3))
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    char name[50];
+    float height;
+    float weight;
+    int schols;
+};
+
+void modifyStudent(struct Student *student) {
+    if (student->height < 180)
+        student->height = 180;
+    if (student->weight < 100)
+        student->weight = 100;
+}
+
+int main() {
+    struct Student students[2];
+    
+    
+    for (int i = 0; i < 2; i++) {
+        printf("Type %d-th student's info (Name, height, weight, schols): ", i);
+        scanf("%s %f %f %d", students[i].name, &students[i].height, &students[i].weight, &students[i].schols);
+    }
+    
+    // call by reference 사용해 학생정보 수정
+    for (int i = 0; i < 2; i++) {
+        modifyStudent(&students[i]);
+    }
+    
+
+    for (int i = 0; i < 2; i++) {
+        printf("Name = %s\n", students[i].name);
+        printf("Height = %.6f\n", students[i].height);
+        printf("Weight = %.6f\n", students[i].weight);
+        printf("Schols = %d\n", students[i].schols);
+    }
+    
+    return 0;
+}
+
+
