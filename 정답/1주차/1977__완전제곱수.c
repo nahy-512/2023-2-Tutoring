@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int return_perfect_square_num(int n, int *);
+int returnPerfectSquareNum(int n, int *);
 
 int main()
 {
@@ -13,9 +13,8 @@ int main()
 
     for (int i = start; i <= end; i++)
     {
-        if (return_perfect_square_num(i, &min) != -1)
+        if (returnPerfectSquareNum(i, &min) != -1)
         {
-            // printf("[%d]\n", i);
             // 완전제곱수 더하기
             sum += i;
         }
@@ -27,7 +26,7 @@ int main()
     return 0;
 }
 
-int return_perfect_square_num(int num, int *min)
+int returnPerfectSquareNum(int num, int *min)
 {
     for (int j = 1; j <= num; j++)
     { // 완전제곱수인지 판별하기
