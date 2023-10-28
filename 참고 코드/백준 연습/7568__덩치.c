@@ -1,3 +1,4 @@
+/* 3주차 과제 문제 */
 #include <stdio.h>
 
 #define MAX 50

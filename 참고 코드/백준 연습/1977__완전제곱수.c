@@ -1,3 +1,4 @@
+/* 2주차 과제 문제 */
 #include <stdio.h>
 
 int returnPerfectSquareNum(int n, int *);

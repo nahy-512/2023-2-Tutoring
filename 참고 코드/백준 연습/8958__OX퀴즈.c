@@ -1,3 +1,4 @@
+/* 2주차 수업 문제 */
 #include <stdio.h>
 #include <string.h>
 
