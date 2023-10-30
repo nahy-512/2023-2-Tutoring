@@ -1,3 +1,4 @@
+/* 1주차 과제 문제 */
 #include <stdio.h>
 #include <string.h> // strcat 함수가 선언된 헤더 파일
 
