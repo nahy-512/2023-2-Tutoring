@@ -1,0 +1,10 @@
+Seoul Female 13
+Busan Male 34
+Daegu Female 51
+Daegu Male 49
+Daegu Male 69
+Busan Female 67
+Seoul Male 68
+Busan Male 79
+Daegu Male 47
+Seoul Male 38
